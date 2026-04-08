@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { useLoaderData, useParams } from "react-router";
+import { BookContext } from "../../../context/BookContext";
 
 const BookDetail = () => {
   const params = useParams();
-  console.log("params", params.id);
+  // console.log("params", params.id);
 
   const books = useLoaderData();
   // console.log(books);
@@ -23,7 +24,12 @@ const BookDetail = () => {
     yearOfPublishing,
   } = expectedBook;
 
-  console.log(expectedBook);
+  const { handleMarkRead} = useContext(BookContext);
+  // console.log(handleMarkRead, setStoredBooks, storedBooks);
+  
+  // const bookContext = useContext(BookContext)
+  // console.log(bookContext);
+  
 
   return (
     <div className="container mx-auto mt-13 grid grid-cols-1 md:grid-cols-2 gap-12 px-15">
@@ -78,7 +84,8 @@ const BookDetail = () => {
           <h2 className="font-bold text-lg">{rating}</h2>
         </div>
         <div className="flex gap-4">
-          <button className="btn  text-lg border-[#131313]/30 rounded-md px-7 py-4 font-bold">
+          <button onClick={()=>handleMarkRead(expectedBook)}
+            className="btn  text-lg border-[#131313]/30 rounded-md px-7 py-4 font-bold">
             Read
           </button>
           <button className="btn rounded-md px-7 text-lg py-4 font-bold bg-[#50B1C9] text-white ">

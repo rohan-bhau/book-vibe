@@ -6,11 +6,14 @@ import MainLayout from './Layout/MainLayout/MainLayout'
 import Homepage from './pages/Homepage/Homepage'
 import Books from './pages/Books/Books'
 import { router } from './Routes/router'
+import BookProvider from './context/BookContext'
 
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <BookProvider>
     <RouterProvider router={router} />
+    </BookProvider>
   </StrictMode>,
 )
