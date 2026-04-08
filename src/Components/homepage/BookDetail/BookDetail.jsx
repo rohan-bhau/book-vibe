@@ -24,7 +24,7 @@ const BookDetail = () => {
     yearOfPublishing,
   } = expectedBook;
 
-  const { handleMarkRead} = useContext(BookContext);
+  const { handleMarkRead, handleWishedList } = useContext(BookContext);
   // console.log(handleMarkRead, setStoredBooks, storedBooks);
   
   // const bookContext = useContext(BookContext)
@@ -84,11 +84,16 @@ const BookDetail = () => {
           <h2 className="font-bold text-lg">{rating}</h2>
         </div>
         <div className="flex gap-4">
-          <button onClick={()=>handleMarkRead(expectedBook)}
-            className="btn  text-lg border-[#131313]/30 rounded-md px-7 py-4 font-bold">
+          <button
+            onClick={() => handleMarkRead(expectedBook)}
+            className="btn  text-lg border-[#131313]/30 rounded-md px-7 py-4 font-bold"
+          >
             Read
           </button>
-          <button className="btn rounded-md px-7 text-lg py-4 font-bold bg-[#50B1C9] text-white ">
+          <button
+            className="btn rounded-md px-7 text-lg py-4 font-bold bg-[#50B1C9] text-white "
+            onClick={() => handleWishedList(expectedBook)}
+          >
             Wishlist
           </button>
         </div>
