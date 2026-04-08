@@ -10,7 +10,7 @@ const AllBooks = () => {
     return (
       <div className="container mx-auto mt-25">
         <h2 className="text-3xl font-bold flex justify-center mb-10">Books</h2>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-5'>
           {books.map((book) => (
             <BookCard key={book.bookId} book={book}></BookCard>
           ))}
