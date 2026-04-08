@@ -1,0 +1,22 @@
+import React, { use } from 'react';
+import BookCard from '../BookCard/BookCard';
+
+const booksPromise = fetch("/booksData.json").then(res=>res.json())
+
+const AllBooks = () => {
+    const books = use(booksPromise)
+    console.log(books);
+    
+    return (
+      <div className="container mx-auto mt-25">
+        <h2 className="text-3xl font-bold flex justify-center mb-10">Books</h2>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+          {books.map((book) => (
+            <BookCard key={book.bookId} book={book}></BookCard>
+          ))}
+        </div>
+      </div>
+    );
+}
+
+export default AllBooks;
