@@ -7,10 +7,10 @@ import ListedWishList from '../../Components/ListedBooks/ListedWishList';
 
 const Books = () => {
       const { setStoredBooks, storedBooks } = useContext(BookContext);
-    console.log(setStoredBooks, storedBooks);
+    // console.log(setStoredBooks, storedBooks);
     
     const [sortedType, setSortedType] = useState("")
-    console.log(sortedType, "sortedType");
+    // console.log(sortedType, "sortedType");
     
 
     return (

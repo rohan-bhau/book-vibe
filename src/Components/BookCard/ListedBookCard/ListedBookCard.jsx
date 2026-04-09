@@ -5,7 +5,7 @@ import frameImg from '../../../assets/books.png'
 import { Link } from 'react-router';
 
 const ListedBookCard = ({ book }) => {
-    console.log(book);
+    // console.log(book);
       const {
         bookId,
         bookName,

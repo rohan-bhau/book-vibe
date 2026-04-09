@@ -37,7 +37,7 @@ const Navbar = () => {
       </>
     );
     return (
-      <div className="navbar  bg-base-100 shadow-sm">
+      <div className="navbar  bg-base-100 shadow-sm ">
         <div className='container mx-auto flex'>
           {" "}
           <div className="navbar-start">
